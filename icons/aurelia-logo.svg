@@ -1,0 +1,5 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 48 48" role="img" aria-label="Aurelia Scientific">
+  <rect width="48" height="48" rx="14" fill="#132C45"/>
+  <path d="M14 33 24 11l10 22h-5.2l-1.7-4.2h-6.4L19 33h-5zm8.1-8.2h3.8L24 19.9l-1.9 4.9z" fill="#2FB6A8"/>
+  <path d="M12 37h24v3H12z" fill="#E7A649"/>
+</svg>
