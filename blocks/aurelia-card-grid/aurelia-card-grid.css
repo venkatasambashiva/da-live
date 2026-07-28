@@ -195,7 +195,7 @@
 
 @media (600px <= width <= 1024px) {
   .aurelia-card-grid.categories .aurelia-card-grid-card:nth-child(-n + 3) {
-    min-height: 232.03125px;
+    min-height: 232.0313px;
   }
 
   .aurelia-card-grid.industries .aurelia-card-grid-card {
@@ -203,13 +203,13 @@
   }
 
   .aurelia-card-grid.insights .aurelia-card-grid-card {
-    min-height: 323.296875px;
+    min-height: 323.2969px;
   }
 }
 
 @media (width > 1024px) {
   .aurelia-card-grid.categories .aurelia-card-grid-card {
-    min-height: 232.03125px;
+    min-height: 232.0313px;
   }
 
   .aurelia-card-grid.industries .aurelia-card-grid-card {
@@ -222,7 +222,7 @@
   }
 
   .aurelia-card-grid.insights .aurelia-card-grid-card {
-    min-height: 364.34375px;
+    min-height: 364.3438px;
   }
 }
 

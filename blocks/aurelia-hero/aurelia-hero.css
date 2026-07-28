@@ -55,7 +55,7 @@ body.aurelia .aurelia-hero-actions a.button.primary {
   line-height: 21px;
 }
 
-body.aurelia .aurelia-hero-actions a.button.secondary {
+body.aurelia .aurelia-hero .aurelia-hero-actions a.button.secondary:any-link {
   min-height: 45px;
   border-width: 1px;
   padding: 11px 20px;

@@ -623,14 +623,14 @@ body.aurelia header nav .nav-tools p:has(strong) a {
   body.aurelia header nav[aria-expanded='true'] {
     grid-template:
       'utility utility utility' 36px
-      'brand sections tools' 76px / 208.171875px 725.046875px 375.75px;
+      'brand sections tools' 76px / 208.1719px 725.0469px 375.75px;
     gap: 0;
   }
 
   body.aurelia header .nav-brand,
   body.aurelia header .nav-brand .default-content-wrapper,
   body.aurelia header .nav-brand p {
-    width: 208.171875px;
+    width: 208.1719px;
     height: 31.5px;
     line-height: 31.5px;
   }
@@ -647,7 +647,7 @@ body.aurelia header nav .nav-tools p:has(strong) a {
 
   body.aurelia header nav .nav-sections {
     justify-self: start;
-    width: 725.046875px;
+    width: 725.0469px;
   }
 
   body.aurelia header nav .nav-sections ul > li {
@@ -661,7 +661,7 @@ body.aurelia header nav .nav-tools p:has(strong) a {
   }
 
   body.aurelia header nav .nav-sections ul > li:nth-child(1) {
-    flex: 0 0 116.078125px;
+    flex: 0 0 116.0781px;
   }
 
   body.aurelia header nav .nav-sections ul > li:nth-child(2) {
@@ -669,15 +669,15 @@ body.aurelia header nav .nav-tools p:has(strong) a {
   }
 
   body.aurelia header nav .nav-sections ul > li:nth-child(3) {
-    flex: 0 0 111.609375px;
+    flex: 0 0 111.6094px;
   }
 
   body.aurelia header nav .nav-sections ul > li:nth-child(4) {
-    flex: 0 0 93.28125px;
+    flex: 0 0 93.2813px;
   }
 
   body.aurelia header nav .nav-sections ul > li:nth-child(5) {
-    flex: 0 0 102.078125px;
+    flex: 0 0 102.0781px;
   }
 
   body.aurelia header nav .nav-sections ul > li:nth-child(6) {
@@ -693,14 +693,14 @@ body.aurelia header nav .nav-tools p:has(strong) a {
   }
 
   body.aurelia header nav .nav-tools p:not(:has(.icon, strong)) a {
-    width: 158.203125px;
+    width: 158.2031px;
     height: 45px;
     min-height: 45px;
     line-height: 21px;
   }
 
   body.aurelia header nav .nav-tools p.button-wrapper a.button.primary {
-    width: 151.546875px;
+    width: 151.5469px;
     height: 43px;
     min-height: 43px;
     border: 0;
@@ -713,7 +713,7 @@ body.aurelia header nav .nav-tools p:has(strong) a {
   body.aurelia header nav[aria-expanded='true'] {
     grid-template:
       'utility utility' 36px
-      'brand tools' 76px / 208.171875px 375.75px;
+      'brand tools' 76px / 208.1719px 375.75px;
     justify-content: space-between;
     gap: 0;
     height: 113px;
@@ -733,7 +733,7 @@ body.aurelia header nav .nav-tools p:has(strong) a {
   body.aurelia header .nav-brand,
   body.aurelia header .nav-brand .default-content-wrapper,
   body.aurelia header .nav-brand p {
-    width: 208.171875px;
+    width: 208.1719px;
     height: 31.5px;
     line-height: 31.5px;
   }
@@ -762,7 +762,7 @@ body.aurelia header nav .nav-tools p:has(strong) a {
   body.aurelia header nav .nav-tools p:not(:has(.icon, strong)) a {
     display: inline-flex;
     align-items: center;
-    width: 158.203125px;
+    width: 158.2031px;
     height: 45px;
     min-height: 45px;
     border: 1px solid var(--aurelia-navy);
@@ -773,7 +773,7 @@ body.aurelia header nav .nav-tools p:has(strong) a {
   }
 
   body.aurelia header nav .nav-tools p.button-wrapper a.button.primary {
-    width: 151.546875px;
+    width: 151.5469px;
     height: 43px;
     min-height: 43px;
     border: 0;
@@ -799,6 +799,93 @@ body.aurelia header nav .nav-tools p:has(strong) a {
     min-height: 38px;
     padding: 8px 12px;
     font-size: 12px;
+  }
+}
+
+/* Keep the source-page header contained as its available width changes. */
+@media (width > 1120px) {
+  body.aurelia header nav,
+  body.aurelia header nav[aria-expanded='true'] {
+    grid-template:
+      'utility utility utility' 36px
+      'brand sections tools' 76px / auto minmax(0, 1fr) auto;
+    width: 100%;
+    max-width: none;
+  }
+
+  body.aurelia header .nav-brand,
+  body.aurelia header .nav-brand .default-content-wrapper,
+  body.aurelia header .nav-brand p,
+  body.aurelia header nav .nav-sections,
+  body.aurelia header nav .nav-tools,
+  body.aurelia header nav .nav-tools p:not(:has(.icon, strong)) a,
+  body.aurelia header nav .nav-tools p.button-wrapper a.button.primary {
+    width: auto;
+  }
+
+  body.aurelia header nav .nav-sections ul > li:nth-child(n) {
+    flex: 0 1 auto;
+  }
+}
+
+@media (900px <= width <= 1280px) {
+  body.aurelia header nav .nav-sections {
+    display: none;
+  }
+}
+
+@media (600px <= width < 900px) {
+  body.aurelia header nav,
+  body.aurelia header nav[aria-expanded='true'] {
+    grid-template:
+      'utility utility' 36px
+      'brand tools' 76px / minmax(0, 1fr) auto;
+  }
+
+  body.aurelia header .nav-brand,
+  body.aurelia header .nav-brand .default-content-wrapper,
+  body.aurelia header .nav-brand p,
+  body.aurelia header nav .nav-tools,
+  body.aurelia header nav .nav-tools .default-content-wrapper {
+    width: auto;
+  }
+}
+
+@media (width < 600px) {
+  body.aurelia header {
+    height: 77px;
+  }
+
+  body.aurelia header .nav-wrapper {
+    background: var(--aurelia-white);
+  }
+
+  body.aurelia header nav,
+  body.aurelia header nav[aria-expanded='true'] {
+    grid-template:
+      'hamburger brand empty' 76px
+      'sections sections sections' auto / 40px minmax(0, 1fr) 40px;
+    height: 77px;
+    padding: 0 16px;
+  }
+
+  body.aurelia header nav[aria-expanded='true'] {
+    min-height: 100dvh;
+    background: var(--aurelia-white);
+  }
+
+  body.aurelia header nav .nav-utility,
+  body.aurelia header nav .nav-tools {
+    display: none;
+  }
+
+  body.aurelia header .nav-brand {
+    justify-self: center;
+    min-width: 0;
+  }
+
+  body.aurelia header .nav-brand a {
+    max-width: 100%;
   }
 }
 /* stylelint-enable no-descending-specificity, no-duplicate-selectors */
