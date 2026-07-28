@@ -1,0 +1,35 @@
+.aurelia-workflow {
+  padding: 78px 0;
+}
+
+.aurelia-workflow-figure {
+  margin: 0;
+  overflow: hidden;
+  border: 1px solid var(--aurelia-line);
+  border-radius: 8px;
+  background: var(--aurelia-navy-deep);
+  box-shadow: 0 22px 70px rgb(11 30 50 / 10%);
+}
+
+.aurelia-workflow-figure picture,
+.aurelia-workflow-figure img {
+  display: block;
+  width: 100%;
+}
+
+.aurelia-workflow-figure img {
+  object-fit: cover;
+}
+
+.aurelia-workflow-figure figcaption {
+  display: flex;
+  align-items: center;
+  min-height: 52px;
+  padding: 0 22px;
+  background: var(--aurelia-navy-deep);
+  color: rgb(255 255 255 / 76%);
+  font-family: aurelia-plex-mono, monospace;
+  font-size: 0.74rem;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+}
