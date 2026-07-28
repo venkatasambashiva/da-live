@@ -1,7 +1,6 @@
 .aurelia-marquee {
-  padding: 18px 0;
-  border-top: 1px solid var(--aurelia-line);
-  border-bottom: 1px solid var(--aurelia-line);
+  border-top: 1px solid rgb(255 255 255 / 8%);
+  background: var(--aurelia-navy-deep);
   overflow: hidden;
 }
 
@@ -11,8 +10,11 @@
 
 .aurelia-marquee-track {
   display: flex;
+  gap: 56px;
   width: max-content;
-  animation: aurelia-marquee-scroll 42s linear infinite;
+  padding: 14px 0;
+  white-space: nowrap;
+  animation: aurelia-marquee-scroll 32s linear infinite;
 }
 
 .aurelia-marquee:hover .aurelia-marquee-track {
@@ -21,48 +23,69 @@
 
 .aurelia-marquee-item {
   display: inline-flex;
-  align-items: center;
-  gap: 10px;
+  align-items: baseline;
+  gap: 8px;
   min-width: max-content;
-  padding: 0 28px;
-  color: var(--aurelia-navy);
+  color: #8fa3b2;
+  font-family: aurelia-plex-mono, monospace;
+  font-size: 13px;
 }
 
 .aurelia-marquee-title {
-  font-family: var(--heading-font-family);
-  font-size: 1.06rem;
-  font-weight: 700;
+  color: var(--aurelia-teal);
+  font-size: 14px;
+  font-weight: 600;
 }
 
 .aurelia-marquee-detail {
-  color: var(--aurelia-slate);
-  font-family: aurelia-plex-mono, monospace;
-  font-size: 0.74rem;
-  text-transform: uppercase;
+  color: #8fa3b2;
 }
 
 .aurelia-marquee.logos {
-  background: var(--aurelia-navy-deep);
-  border: 0;
+  border-top: 1px solid var(--aurelia-line);
+  border-bottom: 1px solid var(--aurelia-line);
+  background: var(--aurelia-paper);
 }
 
 .aurelia-marquee.logos .aurelia-marquee-track {
-  animation-duration: 50s;
+  gap: 64px;
+  padding: 26px 0;
+  animation: aurelia-logo-scroll 26s linear infinite;
+}
+
+.aurelia-marquee.logos .aurelia-marquee-viewport {
+  box-sizing: border-box;
+  max-width: 1240px;
+  margin: 0 auto;
+  padding: 0 32px;
 }
 
 .aurelia-marquee.logos .aurelia-marquee-item {
-  color: rgb(255 255 255 / 66%);
+  color: var(--aurelia-slate);
+  opacity: 0.75;
 }
 
 .aurelia-marquee.logos .aurelia-marquee-title {
-  font-family: aurelia-plex-mono, monospace;
-  font-size: 0.84rem;
-  letter-spacing: 0.08em;
-  text-transform: uppercase;
+  color: inherit;
+  font-family: var(--heading-font-family);
+  font-size: 17px;
+  font-weight: 700;
 }
 
 @keyframes aurelia-marquee-scroll {
   to {
     transform: translateX(-50%);
+  }
+}
+
+@keyframes aurelia-logo-scroll {
+  to {
+    transform: translateX(-50%);
+  }
+}
+
+@media (width < 600px) {
+  .aurelia-marquee.logos .aurelia-marquee-viewport {
+    padding: 0 20px;
   }
 }

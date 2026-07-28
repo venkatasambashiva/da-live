@@ -1,21 +1,17 @@
 .aurelia-testimonials {
-  padding: 82px 0;
+  padding: 88px 0;
 }
 
 .aurelia-testimonials-stage {
-  position: relative;
-  min-height: 360px;
+  max-width: 760px;
 }
 
 .aurelia-testimonials-slide {
   display: grid;
+  grid-template-columns: auto 1fr;
   gap: 24px;
   align-items: center;
-  border: 1px solid var(--aurelia-line);
-  border-radius: 8px;
-  padding: 24px;
-  background: var(--aurelia-white);
-  box-shadow: 0 18px 56px rgb(11 30 50 / 8%);
+  padding: 8px 4px;
 }
 
 .aurelia-testimonials-slide[hidden] {
@@ -23,11 +19,10 @@
 }
 
 .aurelia-testimonials-avatar {
-  width: 112px;
-  height: 112px;
+  width: 64px;
+  height: 64px;
   overflow: hidden;
   border-radius: 999px;
-  background: var(--aurelia-navy);
 }
 
 .aurelia-testimonials-avatar picture,
@@ -43,16 +38,17 @@
 
 .aurelia-testimonials-quote blockquote {
   margin: 0;
-  color: var(--aurelia-navy-deep);
+  color: var(--aurelia-navy);
   font-family: var(--heading-font-family);
-  font-size: clamp(1.7rem, 4vw, 3.25rem);
-  font-weight: 700;
-  line-height: 1.05;
+  font-size: 18px;
+  font-weight: 500;
+  line-height: 1.45;
 }
 
 .aurelia-testimonials-quote p {
-  margin: 18px 0 0;
+  margin: 12px 0 0;
   color: var(--aurelia-slate);
+  font-size: 13px;
 }
 
 .aurelia-testimonials-quote strong {
@@ -62,9 +58,10 @@
 .aurelia-testimonials-controls {
   display: flex;
   align-items: center;
-  justify-content: center;
-  gap: 14px;
-  margin-top: 22px;
+  justify-content: flex-end;
+  gap: 10px;
+  max-width: 760px;
+  margin-top: 18px;
 }
 
 .aurelia-testimonials-control,
@@ -80,34 +77,34 @@
 }
 
 .aurelia-testimonials-control {
-  width: 42px;
-  height: 42px;
-  font-weight: 800;
+  width: 38px;
+  height: 38px;
+  font-weight: 600;
 }
 
 .aurelia-testimonials-dots {
   display: flex;
-  gap: 8px;
+  align-items: center;
+  gap: 7px;
+  margin-right: auto;
 }
 
 .aurelia-testimonials-dots button {
-  width: 12px;
-  height: 12px;
+  width: 7px;
+  height: 7px;
+  border: 0;
   padding: 0;
+  background: var(--aurelia-line);
 }
 
 .aurelia-testimonials-dots button[aria-pressed='true'] {
-  background: var(--aurelia-teal);
-  border-color: var(--aurelia-teal);
+  width: 20px;
+  border-radius: 4px;
+  background: var(--aurelia-teal-deep);
 }
 
-@media (width >= 760px) {
-  .aurelia-testimonials-stage {
-    min-height: 310px;
-  }
-
+@media (width < 600px) {
   .aurelia-testimonials-slide {
-    grid-template-columns: 140px minmax(0, 1fr);
-    padding: 38px;
+    grid-template-columns: 1fr;
   }
 }

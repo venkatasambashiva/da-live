@@ -27,7 +27,7 @@ export default function decorate(block) {
     button.type = 'button';
     button.className = 'aurelia-faq-question';
     button.id = `aurelia-faq-question-${index}`;
-    button.setAttribute('aria-expanded', 'false');
+    button.setAttribute('aria-expanded', index === 0 ? 'true' : 'false');
     button.setAttribute('aria-controls', `aurelia-faq-answer-${index}`);
     button.textContent = questionCell?.textContent.trim() || `Question ${index + 1}`;
 
@@ -36,7 +36,7 @@ export default function decorate(block) {
     answer.id = `aurelia-faq-answer-${index}`;
     answer.setAttribute('role', 'region');
     answer.setAttribute('aria-labelledby', button.id);
-    answer.hidden = true;
+    answer.hidden = index !== 0;
     if (answerCell) moveChildren(answerCell, answer);
 
     button.addEventListener('click', () => {

@@ -338,19 +338,26 @@ body.aurelia {
   --aurelia-white: #fff;
   --body-font-family: aurelia-inter, roboto, roboto-fallback, sans-serif;
   --heading-font-family: aurelia-space-grotesk, roboto-condensed, roboto-condensed-fallback, sans-serif;
-  --body-font-size-m: 17px;
-  --body-font-size-s: 15px;
-  --body-font-size-xs: 13px;
-  --heading-font-size-xxl: 48px;
-  --heading-font-size-xl: 34px;
-  --heading-font-size-l: 25px;
+  --body-font-size-m: 16px;
+  --body-font-size-s: 14px;
+  --body-font-size-xs: 12.5px;
+  --heading-font-size-xxl: 46px;
+  --heading-font-size-xl: 32px;
+  --heading-font-size-l: 26px;
   --heading-font-size-m: 21px;
-  --heading-font-size-s: 18px;
-  --heading-font-size-xs: 16px;
-  --nav-height: 72px;
+  --heading-font-size-s: 17px;
+  --heading-font-size-xs: 15px;
+  --nav-height: 113px;
 
   background: var(--aurelia-white);
   color: var(--aurelia-ink);
+  line-height: 1.5;
+}
+
+body.aurelia *,
+body.aurelia *::before,
+body.aurelia *::after {
+  box-sizing: border-box;
 }
 
 body.aurelia h1,
@@ -368,13 +375,32 @@ body.aurelia main > .section {
 }
 
 body.aurelia main > .section > div {
-  max-width: 1200px;
-  padding: 0 20px;
+  box-sizing: border-box;
+  max-width: 1240px;
+  padding: 0 32px;
 }
 
+body.aurelia main > .section:has(.aurelia-hero) {
+  background: linear-gradient(115deg, var(--aurelia-navy-deep) 0%, var(--aurelia-navy) 55%, #1c3d5e 100%);
+}
+
+body.aurelia main > .section:has(.aurelia-marquee) > div {
+  max-width: none;
+  padding: 0;
+}
+
+body.aurelia main > .section:has(.aurelia-card-grid.categories),
 body.aurelia main > .section:has(.aurelia-proof),
 body.aurelia main > .section:has(.aurelia-testimonials) {
   background: var(--aurelia-paper);
+}
+
+body.aurelia main > .section:has(.aurelia-cta) {
+  background: linear-gradient(100deg, var(--aurelia-navy-deep), var(--aurelia-navy));
+}
+
+body.aurelia main > .metadata-container {
+  display: none;
 }
 
 body.aurelia a:any-link {
@@ -391,11 +417,11 @@ body.aurelia .button-wrapper {
 
 body.aurelia a.button:any-link,
 body.aurelia button.button {
-  min-height: 46px;
-  border-radius: 999px;
-  padding: 0.75rem 1.1rem;
-  font-size: 0.9rem;
-  font-weight: 800;
+  min-height: 43px;
+  border-radius: 3px;
+  padding: 11px 20px;
+  font-size: 14px;
+  font-weight: 600;
   letter-spacing: 0;
 }
 
@@ -410,15 +436,15 @@ body.aurelia a.button.primary:hover,
 body.aurelia a.button.primary:focus-visible,
 body.aurelia button.button.primary:hover,
 body.aurelia button.button.primary:focus-visible {
-  border-color: var(--aurelia-amber);
-  background: var(--aurelia-amber);
-  color: var(--aurelia-navy-deep);
+  border-color: var(--aurelia-teal-deep);
+  background: var(--aurelia-teal-deep);
+  color: var(--aurelia-white);
 }
 
 body.aurelia a.button.secondary,
 body.aurelia button.button.secondary {
-  border-color: color-mix(in srgb, var(--aurelia-navy) 24%, transparent);
-  background: var(--aurelia-white);
+  border-color: var(--aurelia-navy);
+  background: transparent;
   color: var(--aurelia-navy);
 }
 
@@ -432,51 +458,42 @@ body.aurelia button.button.secondary:focus-visible {
 }
 
 body.aurelia .aurelia-eyebrow {
-  margin: 0 0 12px;
+  margin: 0 0 14px;
   color: var(--aurelia-teal-deep);
   font-family: aurelia-plex-mono, monospace;
-  font-size: 0.76rem;
-  font-weight: 600;
-  letter-spacing: 0.12em;
+  font-size: 12.5px;
+  font-weight: 500;
+  letter-spacing: 0.14em;
   text-transform: uppercase;
 }
 
 body.aurelia .aurelia-section-intro {
-  max-width: 760px;
-  margin: 0 0 30px;
+  max-width: 640px;
+  margin: 0 0 52px;
 }
 
 body.aurelia .aurelia-section-intro h2 {
   margin: 0;
-  font-size: clamp(2rem, 4vw, 3.2rem);
-  line-height: 1;
+  color: var(--aurelia-navy);
+  font-size: 32px;
+  font-weight: 700;
+  line-height: 1.5;
 }
 
 body.aurelia .aurelia-section-intro p:not(.aurelia-eyebrow) {
-  max-width: 680px;
-  margin: 16px 0 0;
+  max-width: 640px;
+  margin: 14px 0 0;
   color: var(--aurelia-slate);
-  font-size: 1rem;
+  font-size: 15.5px;
 }
 
-@media (width >= 600px) {
-  body.aurelia {
-    --heading-font-size-xxl: 60px;
-    --heading-font-size-xl: 44px;
-  }
-
+@media (width < 600px) {
   body.aurelia main > .section > div {
-    padding: 0 28px;
-  }
-}
-
-@media (width >= 900px) {
-  body.aurelia {
-    --nav-height: 112px;
+    padding: 0 20px;
   }
 
-  body.aurelia main > .section > div {
-    padding: 0 36px;
+  body.aurelia .aurelia-section-intro h2 {
+    font-size: 28px;
   }
 }
 /* stylelint-enable no-descending-specificity */

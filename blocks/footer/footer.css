@@ -121,3 +121,121 @@ body.aurelia footer .default-content-wrapper > p:nth-last-child(-n + 2) {
     grid-column: 1 / -1;
   }
 }
+
+/* Source-page fidelity overrides. */
+/* stylelint-disable no-descending-specificity, no-duplicate-selectors */
+body.aurelia footer {
+  padding: 64px 0 28px;
+  background: var(--aurelia-navy-deep);
+  color: #93a5b2;
+  font-size: 13.5px;
+}
+
+body.aurelia footer .footer > div {
+  box-sizing: border-box;
+  max-width: 1240px;
+  padding: 0 32px;
+}
+
+body.aurelia footer .default-content-wrapper {
+  display: block;
+}
+
+body.aurelia footer .aurelia-footer-top {
+  display: grid;
+  grid-template-columns: 1.4fr 4fr;
+  gap: 32px;
+  border-bottom: 1px solid rgb(255 255 255 / 8%);
+  padding-bottom: 44px;
+}
+
+body.aurelia footer .aurelia-footer-brand p:first-child {
+  margin: 0 0 10px;
+  color: var(--aurelia-white);
+  font-family: var(--heading-font-family);
+  font-size: 16px;
+  font-weight: 700;
+}
+
+body.aurelia footer .aurelia-footer-brand p:last-child {
+  max-width: 220px;
+  color: #7a8e9c;
+  font-size: 13px;
+}
+
+body.aurelia footer .aurelia-footer-links {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 32px;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+body.aurelia footer .aurelia-footer-links > li {
+  color: #5f7688;
+  font-family: aurelia-plex-mono, monospace;
+  font-size: 12px;
+  font-weight: 500;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+body.aurelia footer .aurelia-footer-links > li > ul {
+  display: block;
+  margin: 16px 0 0;
+  padding: 0;
+  font-family: var(--body-font-family);
+  font-size: 13.5px;
+  font-weight: 400;
+  letter-spacing: 0;
+  list-style: none;
+  text-transform: none;
+}
+
+body.aurelia footer .aurelia-footer-links > li > ul li {
+  margin-bottom: 11px;
+}
+
+body.aurelia footer .aurelia-footer-bottom {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 0;
+  padding-top: 24px;
+  font-size: 12.5px;
+}
+
+body.aurelia footer .aurelia-footer-bottom p {
+  color: #93a5b2;
+}
+
+@media (width < 760px) {
+  body.aurelia footer .footer > div {
+    padding: 0 20px;
+  }
+
+  body.aurelia footer .aurelia-footer-top {
+    grid-template-columns: 1fr;
+  }
+
+  body.aurelia footer .aurelia-footer-links {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  body.aurelia footer .aurelia-footer-bottom {
+    align-items: flex-start;
+    flex-direction: column;
+  }
+}
+
+@media (760px <= width <= 1024px) {
+  body.aurelia footer .aurelia-footer-top {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  body.aurelia footer .aurelia-footer-links {
+    display: contents;
+  }
+}
+/* stylelint-enable no-descending-specificity, no-duplicate-selectors */

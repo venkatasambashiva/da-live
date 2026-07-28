@@ -33,7 +33,13 @@ export default function decorate(block) {
 
     const quote = document.createElement('div');
     quote.className = 'aurelia-testimonials-quote';
-    if (quoteCell) moveChildren(quoteCell, quote);
+    if (quoteCell) {
+      moveChildren(quoteCell, quote);
+      const blockquote = quote.querySelector('blockquote');
+      const attribution = [...quote.querySelectorAll('p')]
+        .find((paragraph) => paragraph.querySelector('strong'));
+      if (blockquote && attribution) quote.replaceChildren(blockquote, attribution);
+    }
 
     slide.append(media, quote);
     stage.append(slide);
@@ -42,8 +48,8 @@ export default function decorate(block) {
 
   const controls = document.createElement('div');
   controls.className = 'aurelia-testimonials-controls';
-  const previous = createButton('Show previous testimonial', '<');
-  const next = createButton('Show next testimonial', '>');
+  const previous = createButton('Show previous testimonial', '\u2190');
+  const next = createButton('Show next testimonial', '\u2192');
   const dots = document.createElement('div');
   dots.className = 'aurelia-testimonials-dots';
 
@@ -69,6 +75,6 @@ export default function decorate(block) {
 
   previous.addEventListener('click', () => setActive(activeIndex - 1));
   next.addEventListener('click', () => setActive(activeIndex + 1));
-  controls.append(previous, dots, next);
+  controls.append(dots, previous, next);
   block.replaceChildren(intro, stage, controls);
 }

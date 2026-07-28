@@ -14,6 +14,22 @@ function moveIntro(block, container) {
   container.append(intro);
 }
 
+const categoryIcons = [
+  '<path d="M6 3h12M9 3v6l-5 9a2 2 0 0 0 2 3h12a2 2 0 0 0 2-3l-5-9V3"></path>',
+  '<circle cx="12" cy="12" r="9"></circle><path d="M12 3v18M3 12h18"></path>',
+  '<rect x="4" y="4" width="16" height="16" rx="2"></rect><path d="M4 14h16M9 4v16"></path>',
+  '<path d="M4 20V10M12 20V4M20 20v-7"></path>',
+  '<path d="M4 6h16M4 12h10M4 18h16"></path>',
+];
+
+function createCategoryIcon(index) {
+  const icon = document.createElement('div');
+  icon.className = 'aurelia-card-grid-icon';
+  icon.setAttribute('aria-hidden', 'true');
+  icon.innerHTML = `<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8">${categoryIcons[index] || categoryIcons[4]}</svg>`;
+  return icon;
+}
+
 function createCard(row, variant, index) {
   const card = document.createElement('article');
   card.className = 'aurelia-card-grid-card';
@@ -40,13 +56,16 @@ function createCard(row, variant, index) {
     marker.classList.add(`swatch-${index + 1}`);
     marker.setAttribute('aria-hidden', 'true');
   }
-  card.append(marker);
-
   const body = document.createElement('div');
   body.className = 'aurelia-card-grid-body';
   const contentCell = variant === 'categories' || variant === 'industries' ? cells[1] : cells[0];
   if (contentCell) moveChildren(contentCell, body);
-  card.append(body);
+  if (variant === 'categories') {
+    body.prepend(marker);
+    card.append(createCategoryIcon(index), body);
+  } else {
+    card.append(marker, body);
+  }
   return card;
 }
 
