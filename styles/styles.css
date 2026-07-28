@@ -323,3 +323,160 @@ main .section.highlight {
   margin: 0;
   padding: 40px 0;
 }
+
+/* stylelint-disable no-descending-specificity */
+body.aurelia {
+  --aurelia-navy: #132c45;
+  --aurelia-navy-deep: #0b1e32;
+  --aurelia-teal: #2fb6a8;
+  --aurelia-teal-deep: #1e8c81;
+  --aurelia-amber: #e7a649;
+  --aurelia-ink: #182229;
+  --aurelia-slate: #5b6b76;
+  --aurelia-line: #dde4e8;
+  --aurelia-paper: #f6f8f9;
+  --aurelia-white: #fff;
+  --body-font-family: aurelia-inter, roboto, roboto-fallback, sans-serif;
+  --heading-font-family: aurelia-space-grotesk, roboto-condensed, roboto-condensed-fallback, sans-serif;
+  --body-font-size-m: 17px;
+  --body-font-size-s: 15px;
+  --body-font-size-xs: 13px;
+  --heading-font-size-xxl: 48px;
+  --heading-font-size-xl: 34px;
+  --heading-font-size-l: 25px;
+  --heading-font-size-m: 21px;
+  --heading-font-size-s: 18px;
+  --heading-font-size-xs: 16px;
+  --nav-height: 72px;
+
+  background: var(--aurelia-white);
+  color: var(--aurelia-ink);
+}
+
+body.aurelia h1,
+body.aurelia h2,
+body.aurelia h3,
+body.aurelia h4,
+body.aurelia h5,
+body.aurelia h6 {
+  letter-spacing: 0;
+  color: var(--aurelia-navy-deep);
+}
+
+body.aurelia main > .section {
+  margin: 0;
+}
+
+body.aurelia main > .section > div {
+  max-width: 1200px;
+  padding: 0 20px;
+}
+
+body.aurelia main > .section:has(.aurelia-proof),
+body.aurelia main > .section:has(.aurelia-testimonials) {
+  background: var(--aurelia-paper);
+}
+
+body.aurelia a:any-link {
+  color: var(--aurelia-navy);
+}
+
+body.aurelia a:hover {
+  color: var(--aurelia-teal-deep);
+}
+
+body.aurelia .button-wrapper {
+  margin: 0;
+}
+
+body.aurelia a.button:any-link,
+body.aurelia button.button {
+  min-height: 46px;
+  border-radius: 999px;
+  padding: 0.75rem 1.1rem;
+  font-size: 0.9rem;
+  font-weight: 800;
+  letter-spacing: 0;
+}
+
+body.aurelia a.button.primary,
+body.aurelia button.button.primary {
+  border-color: var(--aurelia-teal);
+  background: var(--aurelia-teal);
+  color: var(--aurelia-navy-deep);
+}
+
+body.aurelia a.button.primary:hover,
+body.aurelia a.button.primary:focus-visible,
+body.aurelia button.button.primary:hover,
+body.aurelia button.button.primary:focus-visible {
+  border-color: var(--aurelia-amber);
+  background: var(--aurelia-amber);
+  color: var(--aurelia-navy-deep);
+}
+
+body.aurelia a.button.secondary,
+body.aurelia button.button.secondary {
+  border-color: color-mix(in srgb, var(--aurelia-navy) 24%, transparent);
+  background: var(--aurelia-white);
+  color: var(--aurelia-navy);
+}
+
+body.aurelia a.button.secondary:hover,
+body.aurelia a.button.secondary:focus-visible,
+body.aurelia button.button.secondary:hover,
+body.aurelia button.button.secondary:focus-visible {
+  border-color: var(--aurelia-navy);
+  background: var(--aurelia-paper);
+  color: var(--aurelia-navy);
+}
+
+body.aurelia .aurelia-eyebrow {
+  margin: 0 0 12px;
+  color: var(--aurelia-teal-deep);
+  font-family: aurelia-plex-mono, monospace;
+  font-size: 0.76rem;
+  font-weight: 600;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+}
+
+body.aurelia .aurelia-section-intro {
+  max-width: 760px;
+  margin: 0 0 30px;
+}
+
+body.aurelia .aurelia-section-intro h2 {
+  margin: 0;
+  font-size: clamp(2rem, 4vw, 3.2rem);
+  line-height: 1;
+}
+
+body.aurelia .aurelia-section-intro p:not(.aurelia-eyebrow) {
+  max-width: 680px;
+  margin: 16px 0 0;
+  color: var(--aurelia-slate);
+  font-size: 1rem;
+}
+
+@media (width >= 600px) {
+  body.aurelia {
+    --heading-font-size-xxl: 60px;
+    --heading-font-size-xl: 44px;
+  }
+
+  body.aurelia main > .section > div {
+    padding: 0 28px;
+  }
+}
+
+@media (width >= 900px) {
+  body.aurelia {
+    --nav-height: 112px;
+  }
+
+  body.aurelia main > .section > div {
+    padding: 0 36px;
+  }
+}
+/* stylelint-enable no-descending-specificity */

@@ -12,7 +12,7 @@ module.exports = {
   },
   rules: {
     'import/extensions': ['error', { js: 'always' }], // require js file extensions in imports
-    'linebreak-style': ['error', 'unix'], // enforce unix linebreaks
+    'linebreak-style': 'off', // allow Windows and Unix checkouts
     'no-param-reassign': [2, { props: false }], // allow modifying properties of param
   },
 };

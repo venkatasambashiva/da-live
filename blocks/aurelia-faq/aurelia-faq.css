@@ -1,0 +1,61 @@
+.aurelia-faq {
+  padding: 82px 0;
+}
+
+.aurelia-faq-list {
+  border-top: 1px solid var(--aurelia-line);
+}
+
+.aurelia-faq-item {
+  border-bottom: 1px solid var(--aurelia-line);
+}
+
+.aurelia-faq-question {
+  position: relative;
+  display: block;
+  width: 100%;
+  border: 0;
+  padding: 22px 42px 22px 0;
+  background: transparent;
+  color: var(--aurelia-navy-deep);
+  font-family: var(--heading-font-family);
+  font-size: clamp(1.1rem, 2.2vw, 1.55rem);
+  font-weight: 700;
+  line-height: 1.2;
+  text-align: left;
+  cursor: pointer;
+}
+
+.aurelia-faq-question::after {
+  content: '+';
+  position: absolute;
+  right: 6px;
+  top: 50%;
+  width: 28px;
+  height: 28px;
+  border-radius: 999px;
+  background: var(--aurelia-paper);
+  color: var(--aurelia-teal-deep);
+  line-height: 28px;
+  text-align: center;
+  transform: translateY(-50%);
+}
+
+.aurelia-faq-question[aria-expanded='true']::after {
+  content: '-';
+}
+
+.aurelia-faq-answer {
+  max-width: 820px;
+  padding: 0 0 24px;
+  color: var(--aurelia-slate);
+}
+
+.aurelia-faq-answer p {
+  margin: 0;
+}
+
+.aurelia-faq-footer {
+  margin-top: 24px;
+  font-weight: 800;
+}

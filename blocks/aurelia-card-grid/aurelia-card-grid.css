@@ -1,0 +1,143 @@
+.aurelia-card-grid {
+  padding: 74px 0;
+}
+
+.aurelia-card-grid-list {
+  display: grid;
+  gap: 16px;
+}
+
+.aurelia-card-grid-card {
+  min-width: 0;
+  border: 1px solid var(--aurelia-line);
+  border-radius: 8px;
+  padding: 22px;
+  background: var(--aurelia-white);
+  box-shadow: 0 14px 46px rgb(11 30 50 / 6%);
+}
+
+.aurelia-card-grid-marker {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 44px;
+  height: 34px;
+  margin-bottom: 24px;
+  border-radius: 999px;
+  background: var(--aurelia-paper);
+  color: var(--aurelia-teal-deep);
+  font-family: aurelia-plex-mono, monospace;
+  font-size: 0.78rem;
+  font-weight: 600;
+}
+
+.aurelia-card-grid-card h3 {
+  margin: 0;
+  font-size: 1.26rem;
+  line-height: 1.12;
+}
+
+.aurelia-card-grid-card p {
+  margin: 12px 0 0;
+  color: var(--aurelia-slate);
+  font-size: 0.95rem;
+  line-height: 1.55;
+}
+
+.aurelia-card-grid-card a {
+  font-weight: 800;
+}
+
+.aurelia-card-grid.industries {
+  background: var(--aurelia-paper);
+}
+
+.aurelia-card-grid.industries .aurelia-card-grid-list {
+  grid-template-columns: 1fr;
+}
+
+.aurelia-card-grid.industries .aurelia-card-grid-marker {
+  display: block;
+  width: 100%;
+  height: 100px;
+  border-radius: 8px;
+  background: linear-gradient(135deg, var(--aurelia-teal), var(--aurelia-navy));
+}
+
+.aurelia-card-grid.industries .aurelia-card-grid-marker.swatch-2 {
+  background: linear-gradient(135deg, var(--aurelia-amber), var(--aurelia-navy));
+}
+
+.aurelia-card-grid.industries .aurelia-card-grid-marker.swatch-3 {
+  background: linear-gradient(135deg, var(--aurelia-teal), var(--aurelia-navy-deep));
+}
+
+.aurelia-card-grid.industries .aurelia-card-grid-marker.swatch-4 {
+  background: linear-gradient(135deg, var(--aurelia-navy), var(--aurelia-navy-deep));
+}
+
+.aurelia-card-grid.insights .aurelia-card-grid-card {
+  padding: 0;
+  overflow: hidden;
+}
+
+.aurelia-card-grid-media {
+  aspect-ratio: 4 / 3;
+  background: var(--aurelia-paper);
+}
+
+.aurelia-card-grid-media picture,
+.aurelia-card-grid-media img {
+  display: block;
+  width: 100%;
+  height: 100%;
+}
+
+.aurelia-card-grid-media img {
+  object-fit: cover;
+}
+
+.aurelia-card-grid.insights .aurelia-card-grid-body {
+  padding: 22px;
+}
+
+.aurelia-card-grid.insights .aurelia-card-grid-body > p:first-child {
+  margin: 0 0 12px;
+  color: var(--aurelia-teal-deep);
+  font-family: aurelia-plex-mono, monospace;
+  font-size: 0.72rem;
+  font-weight: 600;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+}
+
+.aurelia-card-grid.insights .aurelia-card-grid-body > p:last-child {
+  display: flex;
+  justify-content: space-between;
+  gap: 16px;
+  margin-top: 18px;
+  color: var(--aurelia-navy);
+  font-family: aurelia-plex-mono, monospace;
+  font-size: 0.72rem;
+  text-transform: uppercase;
+}
+
+@media (width >= 640px) {
+  .aurelia-card-grid.categories .aurelia-card-grid-list {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .aurelia-card-grid.industries .aurelia-card-grid-list {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+@media (width >= 980px) {
+  .aurelia-card-grid.categories .aurelia-card-grid-list {
+    grid-template-columns: repeat(5, minmax(0, 1fr));
+  }
+
+  .aurelia-card-grid.insights .aurelia-card-grid-list {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
+}
