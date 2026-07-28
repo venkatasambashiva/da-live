@@ -11,7 +11,3 @@ helix-importer-ui
 # Ensure these files are tracked
 !CLAUDE.md
 !AGENTS.md
-
-.claude/*
-.vscode/*
-.env
